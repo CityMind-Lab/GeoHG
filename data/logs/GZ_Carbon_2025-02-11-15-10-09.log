@@ -1,0 +1,72 @@
+2025-02-11 15:10:09,135 - INFO - Namespace(batch_size=1000000, city='GZ', downstream_data_dir='data/downstream_tasks', early_stop=True, entity_thresh=0.0, epoch_num=2000, gnn_training=True, gpu=0, graph_data_dir='data/Hyper_Graph', hidden_channels=64, hypernode='all', load_gnn='', log_saved_dir='data/logs', lr=0.01, masked_ratio=0.7, metrics='r2', model_saved_dir='data/models', poi_thresh=0.0, pos_embedding=1, random_seed=0, task='Carbon')
+2025-02-11 15:10:09,136 - INFO - Train GNN model from scratch
+2025-02-11 15:10:09,137 - INFO - Start loading data...
+2025-02-11 15:10:09,264 - INFO - area node num: 8540
+2025-02-11 15:10:09,267 - INFO - area near area edge num: 67172
+2025-02-11 15:10:09,493 - INFO - entity locate area edge num: 24902
+2025-02-11 15:10:09,831 - INFO - X feature shape:torch.Size([8540, 24])
+2025-02-11 15:10:10,583 - INFO - Graph data:
+HeteroData(
+  area={
+    num_nodes=8540,
+    x=[8540, 24],
+    y=[8540],
+  },
+  entity={
+    num_nodes=9,
+    x=[9, 9],
+  },
+  poi={
+    num_nodes=14,
+    x=[14, 14],
+  },
+  (entity, locate, area)={
+    edge_index=[2, 24902],
+    edge_attr=[24902, 1],
+  },
+  (poi, locate, area)={
+    edge_index=[2, 9957],
+    edge_attr=[9957, 1],
+  },
+  (area, near, area)={ edge_index=[2, 67172] },
+  (area, rev_locate, entity)={
+    edge_index=[2, 24902],
+    edge_attr=[24902, 1],
+  },
+  (area, rev_locate, poi)={
+    edge_index=[2, 9957],
+    edge_attr=[9957, 1],
+  }
+)
+2025-02-11 15:10:10,593 - INFO - train size: 1793, val size: 768, test size: 5978
+2025-02-11 15:10:11,096 - INFO - Start training...
+2025-02-11 15:10:12,809 - INFO - Epoch: 0, Loss: 0.00057144, Train r2: -0.0004, Val r2: -0.0176 *
+2025-02-11 15:10:14,375 - INFO - Epoch: 10, Loss: 0.00035833, Train r2: 0.4762, Val r2: 0.4195 *
+2025-02-11 15:10:16,276 - INFO - Epoch: 20, Loss: 0.00021141, Train r2: 0.6346, Val r2: 0.6247 *
+2025-02-11 15:10:18,581 - INFO - Epoch: 30, Loss: 0.00016974, Train r2: 0.7076, Val r2: 0.7236 *
+2025-02-11 15:10:20,157 - INFO - Epoch: 40, Loss: 0.00015274, Train r2: 0.7327, Val r2: 0.7618 
+2025-02-11 15:10:21,464 - INFO - Epoch: 50, Loss: 0.00012248, Train r2: 0.7842, Val r2: 0.7995 
+2025-02-11 15:10:23,015 - INFO - Epoch: 60, Loss: 0.00013805, Train r2: 0.7911, Val r2: 0.8159 
+2025-02-11 15:10:24,118 - INFO - Epoch: 70, Loss: 0.00010641, Train r2: 0.8018, Val r2: 0.8057 
+2025-02-11 15:10:25,212 - INFO - Epoch: 80, Loss: 0.00010549, Train r2: 0.8228, Val r2: 0.8369 *
+2025-02-11 15:10:26,183 - INFO - Epoch: 90, Loss: 0.00009613, Train r2: 0.8098, Val r2: 0.8277 
+2025-02-11 15:10:27,324 - INFO - Epoch: 100, Loss: 0.00010614, Train r2: 0.7956, Val r2: 0.7846 
+2025-02-11 15:10:28,360 - INFO - Epoch: 110, Loss: 0.00010047, Train r2: 0.8155, Val r2: 0.8089 
+2025-02-11 15:10:29,338 - INFO - Epoch: 120, Loss: 0.00008965, Train r2: 0.8347, Val r2: 0.8316 
+2025-02-11 15:10:30,603 - INFO - Epoch: 130, Loss: 0.00008554, Train r2: 0.8500, Val r2: 0.8529 *
+2025-02-11 15:10:31,542 - INFO - Epoch: 140, Loss: 0.00008224, Train r2: 0.8522, Val r2: 0.8466 
+2025-02-11 15:10:32,495 - INFO - Epoch: 150, Loss: 0.00009816, Train r2: 0.8501, Val r2: 0.8533 
+2025-02-11 15:10:33,457 - INFO - Epoch: 160, Loss: 0.00009080, Train r2: 0.8557, Val r2: 0.8549 
+2025-02-11 15:10:34,501 - INFO - Epoch: 170, Loss: 0.00007646, Train r2: 0.8647, Val r2: 0.8604 *
+2025-02-11 15:10:35,348 - INFO - Epoch: 180, Loss: 0.00012539, Train r2: 0.8063, Val r2: 0.8152 
+2025-02-11 15:10:36,171 - INFO - Epoch: 190, Loss: 0.00008999, Train r2: 0.8166, Val r2: 0.8306 
+2025-02-11 15:10:36,973 - INFO - Epoch: 200, Loss: 0.00008173, Train r2: 0.8478, Val r2: 0.8355 
+2025-02-11 15:10:37,818 - INFO - Epoch: 210, Loss: 0.00007759, Train r2: 0.8618, Val r2: 0.8476 
+2025-02-11 15:10:38,628 - INFO - Epoch: 220, Loss: 0.00007240, Train r2: 0.8731, Val r2: 0.8591 
+2025-02-11 15:10:39,439 - INFO - Epoch: 230, Loss: 0.00007304, Train r2: 0.8540, Val r2: 0.8289 
+2025-02-11 15:10:40,472 - INFO - Epoch: 240, Loss: 0.00007507, Train r2: 0.8712, Val r2: 0.8458 
+2025-02-11 15:10:41,302 - INFO - Epoch: 250, Loss: 0.00014421, Train r2: 0.8691, Val r2: 0.8474 
+2025-02-11 15:10:42,133 - INFO - Epoch: 260, Loss: 0.00009126, Train r2: 0.8479, Val r2: 0.8289 
+2025-02-11 15:10:42,911 - INFO - Epoch: 270, Loss: 0.00008010, Train r2: 0.8736, Val r2: 0.8556 
+2025-02-11 15:10:43,694 - INFO - Epoch: 280, Loss: 0.00006889, Train r2: 0.8819, Val r2: 0.8544 
+2025-02-11 15:10:44,472 - INFO - Epoch: 290, Loss: 0.00006692, Train r2: 0.8892, Val r2: 0.8579 

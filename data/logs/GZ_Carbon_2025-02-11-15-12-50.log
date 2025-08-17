@@ -1,0 +1,42 @@
+2025-02-11 15:12:50,805 - INFO - Namespace(batch_size=1000000, city='GZ', downstream_data_dir='data/downstream_tasks', early_stop=True, entity_thresh=0.0, epoch_num=2000, gnn_training=True, gpu=0, graph_data_dir='data/Hyper_Graph', hidden_channels=64, hypernode='all', load_gnn='', log_saved_dir='data/logs', lr=0.01, masked_ratio=0.7, metrics='r2', model_saved_dir='data/models', poi_thresh=0.0, pos_embedding=1, random_seed=0, task='Carbon')
+2025-02-11 15:12:50,805 - INFO - Train GNN model from scratch
+2025-02-11 15:12:50,807 - INFO - Start loading data...
+2025-02-11 15:12:50,913 - INFO - area node num: 8540
+2025-02-11 15:12:50,913 - INFO - area near area edge num: 67172
+2025-02-11 15:12:51,114 - INFO - entity locate area edge num: 24902
+2025-02-11 15:12:51,289 - INFO - X feature shape:torch.Size([8540, 24])
+2025-02-11 15:12:51,779 - INFO - Graph data:
+HeteroData(
+  area={
+    num_nodes=8540,
+    x=[8540, 24],
+    y=[8540],
+  },
+  entity={
+    num_nodes=9,
+    x=[9, 9],
+  },
+  poi={
+    num_nodes=14,
+    x=[14, 14],
+  },
+  (entity, locate, area)={
+    edge_index=[2, 24902],
+    edge_attr=[24902, 1],
+  },
+  (poi, locate, area)={
+    edge_index=[2, 9957],
+    edge_attr=[9957, 1],
+  },
+  (area, near, area)={ edge_index=[2, 67172] },
+  (area, rev_locate, entity)={
+    edge_index=[2, 24902],
+    edge_attr=[24902, 1],
+  },
+  (area, rev_locate, poi)={
+    edge_index=[2, 9957],
+    edge_attr=[9957, 1],
+  }
+)
+2025-02-11 15:12:51,787 - INFO - train size: 1793, val size: 768, test size: 5978
+2025-02-11 15:12:52,175 - INFO - Start training...
